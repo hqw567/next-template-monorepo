@@ -1,0 +1,30 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "pnpm typecheck && turbo run build",
+    "dev": "turbo run dev",
+    "commit": "git-cz",
+    "clean": "turbo clean && git clean -xdf node_modules .turbo .next",
+    "format": "pnpm biome format --write",
+    "lint": "pnpm biome lint --write --unsafe",
+    "check": "pnpm biome check --write",
+    "dev:web": "turbo run dev --filter=web",
+    "dev:storybook": "turbo run dev --filter=storybook",
+    "typecheck": "turbo run typecheck",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.0.0-beta.1",
+    "@commitlint/config-conventional": "^19.8.0",
+    "commitizen": "^4.3.1",
+    "commitlint": "^19.8.0",
+    "cz-git": "^1.11.1",
+    "husky": "^9.1.7",
+    "turbo": "^2.5.1"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "name": "name",
+  "packageManager": "pnpm@10.9.0+sha512.0486e394640d3c1fb3c9d43d49cf92879ff74f8516959c235308f5a8f62e2e19528a65cdc2a3058f587cde71eba3d5b56327c8c33a97e4c4051ca48a10ca2d5f"
+}
