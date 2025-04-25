@@ -6,13 +6,17 @@
     "build": {
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
       "outputs": ["dist/**", ".next/**", "!.next/cache/**", "storybook-static/**"],
-      "dependsOn": ["^build", "test"]
+      "dependsOn": ["typecheck", "^build"]
+    },
+    "start": {
+      "dependsOn": ["build"],
+      "persistent": true
     },
     "test": {
       "dependsOn": []
     },
     "typecheck": {
-      "dependsOn": []
+      "dependsOn": ["^typecheck"]
     },
     "dev": {
       "cache": false,

@@ -1,14 +1,16 @@
 {
   "private": true,
   "scripts": {
-    "build": "pnpm typecheck && turbo run build",
+    "build": "turbo run typecheck build",
+    "start": "turbo run build start",
     "dev": "turbo run dev",
     "commit": "git-cz",
     "clean": "turbo clean && git clean -xdf node_modules .turbo .next",
     "format": "biome format --write",
-    "lint": "biome lint --write",
-    "check": "biome check --write",
+    "lint": "biome lint --write --unsafe",
+    "check": "biome check --write --unsafe",
     "dev:web": "turbo run dev --filter=web",
+    "dev:docs": "turbo run dev --filter=docs",
     "dev:storybook": "turbo run dev --filter=storybook",
     "typecheck": "turbo run typecheck",
     "prepare": "node setup.mjs && husky"

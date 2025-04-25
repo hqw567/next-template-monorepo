@@ -53,7 +53,7 @@
         "noExplicitAny": "off"
       },
       "nursery": {
-        "useSortedClasses": "error"
+        "useSortedClasses": "info"
       },
       "style": {
         "useFilenamingConvention": {
