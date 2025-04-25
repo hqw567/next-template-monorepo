@@ -6,7 +6,7 @@
     "dev": "storybook dev -p 6006",
     "build": "pnpm typecheck && storybook build",
     "chromatic": "chromatic --exit-zero-on-changes",
-    "clean": "git config --system core.longpaths true && git clean -xdf .cache .turbo dist node_modules storybook-static",
+    "clean": "git clean -xdf .cache .turbo dist node_modules storybook-static",
     "typecheck": "tsc --noEmit --emitDeclarationOnly false"
   },
   "dependencies": {
