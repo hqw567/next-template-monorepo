@@ -44,7 +44,9 @@
         "noAutofocus": "off",
         "useFocusableInteractive": "off",
         "useSemanticElements": "off",
-        "useAriaPropsForRole": "off"
+        "useAriaPropsForRole": "off",
+        "useKeyWithClickEvents": "off",
+        "useMediaCaption": "off"
       },
       "complexity": {},
       "recommended": true,
