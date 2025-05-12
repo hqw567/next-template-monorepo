@@ -10,7 +10,7 @@ import {
 import { cn } from "@repo/design-system/lib/utils"
 import { Command as CommandPrimitive } from "cmdk"
 import { SearchIcon } from "lucide-react"
-import * as React from "react"
+import type * as React from "react"
 
 function Command({ className, ...props }: React.ComponentProps<typeof CommandPrimitive>) {
   return (

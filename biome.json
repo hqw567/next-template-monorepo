@@ -1,8 +1,8 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.0.0-beta.1/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.0.0-beta.3/schema.json",
   "files": {
     "ignoreUnknown": true,
-    "includes": ["**"]
+    "includes": ["**", "!**/{node_modules,dist,.next,.turbo,storybook-static}/**"]
   },
   "formatter": {
     "attributePosition": "auto",
@@ -55,7 +55,14 @@
         "noExplicitAny": "off"
       },
       "nursery": {
-        "useSortedClasses": "info"
+        "useSortedClasses": {
+          "fix": "safe",
+          "level": "warn",
+          "options": {
+            "attributes": ["classList"],
+            "functions": ["cn", "clsx", "cva", "tw"]
+          }
+        }
       },
       "style": {
         "useFilenamingConvention": {
@@ -91,17 +98,5 @@
     "defaultBranch": "main",
     "enabled": true,
     "useIgnoreFile": true
-  },
-  "overrides": [
-    {
-      "includes": ["test/**/*"],
-      "linter": {
-        "rules": {
-          "style": {
-            "useFilenamingConvention": "off"
-          }
-        }
-      }
-    }
-  ]
+  }
 }

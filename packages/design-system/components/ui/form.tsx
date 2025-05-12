@@ -1,6 +1,6 @@
 "use client"
 
-import * as LabelPrimitive from "@radix-ui/react-label"
+import type * as LabelPrimitive from "@radix-ui/react-label"
 import { Slot } from "@radix-ui/react-slot"
 import { Label } from "@repo/design-system/components/ui/label"
 import { cn } from "@repo/design-system/lib/utils"

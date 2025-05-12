@@ -10,6 +10,7 @@ type GlobalErrorProperties = {
 }
 
 const GlobalError = ({ error, reset }: GlobalErrorProperties) => {
+  console.error(error)
   return (
     <html className={fonts} lang="en">
       <body>

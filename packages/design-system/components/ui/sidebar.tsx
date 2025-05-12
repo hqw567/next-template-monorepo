@@ -9,7 +9,7 @@ import { Skeleton } from "@repo/design-system/components/ui/skeleton"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@repo/design-system/components/ui/tooltip"
 import { useIsMobile } from "@repo/design-system/hooks/use-mobile"
 import { cn } from "@repo/design-system/lib/utils"
-import { cva, VariantProps } from "class-variance-authority"
+import { cva, type VariantProps } from "class-variance-authority"
 import { PanelLeftIcon } from "lucide-react"
 import * as React from "react"
 
