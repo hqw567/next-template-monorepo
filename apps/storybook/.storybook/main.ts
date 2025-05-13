@@ -11,7 +11,13 @@ const require = createRequire(import.meta.url)
 const getAbsolutePath = (value: string) => dirname(require.resolve(join(value, "package.json")))
 
 const config: StorybookConfig = {
-  stories: ["../stories/**/*.mdx", "../stories/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
+  stories: [
+    {
+      directory: "../../../packages/design-system/components/ui",
+      titlePrefix: "design-system",
+      files: "**/*.stories.@(js|jsx|mjs|ts|tsx)",
+    },
+  ],
   addons: [
     getAbsolutePath("@storybook/addon-onboarding"),
     getAbsolutePath("@storybook/addon-essentials"),
