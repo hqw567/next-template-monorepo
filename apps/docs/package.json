@@ -1,14 +1,4 @@
 {
-  "name": "docs",
-  "version": "0.0.0",
-  "private": true,
-  "scripts": {
-    "build": "next build --turbopack",
-    "dev": "next dev -p 3001 --turbopack",
-    "start": "next start -p 3001",
-    "postinstall": "fumadocs-mdx",
-    "clean": "git clean -xdf node_modules .turbo .next .source"
-  },
   "dependencies": {
     "fumadocs-core": "15.5.3",
     "fumadocs-mdx": "11.6.9",
@@ -26,5 +16,15 @@
     "postcss": "^8.5.6",
     "tailwindcss": "^4.1.10",
     "typescript": "^5.8.3"
-  }
+  },
+  "name": "docs",
+  "private": true,
+  "scripts": {
+    "build": "next build --turbopack",
+    "clean": "git clean -xdf node_modules .turbo .next .source",
+    "dev": "next dev -p 3001 --turbopack",
+    "postinstall": "fumadocs-mdx",
+    "start": "next start -p 3001"
+  },
+  "version": "0.0.0"
 }

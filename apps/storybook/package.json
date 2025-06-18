@@ -1,15 +1,4 @@
 {
-  "name": "storybook",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "storybook dev -p 6006 --no-open",
-    "build": "storybook build",
-    "start": "serve storybook-static -l 6006",
-    "chromatic": "chromatic --exit-zero-on-changes",
-    "clean": "git clean -xdf .cache .turbo dist node_modules storybook-static",
-    "typecheck": "tsc --noEmit --emitDeclarationOnly false"
-  },
   "dependencies": {
     "@hookform/resolvers": "^5.1.1",
     "@repo/design-system": "workspace:*",
@@ -46,5 +35,16 @@
     "storybook": "^8.6.14",
     "tailwindcss": "^4.1.10",
     "typescript": "^5.8.3"
-  }
+  },
+  "name": "storybook",
+  "private": true,
+  "scripts": {
+    "build": "storybook build",
+    "chromatic": "chromatic --exit-zero-on-changes",
+    "clean": "git clean -xdf .cache .turbo dist node_modules storybook-static",
+    "dev": "storybook dev -p 6006 --no-open",
+    "start": "serve storybook-static -l 6006",
+    "typecheck": "tsc --noEmit --emitDeclarationOnly false"
+  },
+  "version": "0.1.0"
 }

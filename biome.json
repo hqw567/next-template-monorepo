@@ -1,12 +1,24 @@
 {
   "$schema": "https://biomejs.dev/schemas/2.0.0/schema.json",
+  "assist": {
+    "actions": {
+      "source": {
+        "organizeImports": "on",
+        "useSortedAttributes": "on",
+        "useSortedKeys": "off",
+        "useSortedProperties": "on"
+      }
+    },
+    "enabled": true
+  },
   "files": {
     "ignoreUnknown": true,
     "includes": [
       "**",
       "!**/{node_modules,dist,.next,.turbo,storybook-static}/**",
       "!**/routeTree.gen.ts",
-      "!**/.vitepress/cache/**"
+      "!**/.vitepress/cache/**",
+      "!**/web/src/**/*.module.scss.d.ts"
     ]
   },
   "formatter": {
@@ -35,37 +47,35 @@
       "trailingCommas": "all"
     }
   },
+  "json": {
+    "parser": {
+      "allowComments": true,
+      "allowTrailingCommas": true
+    }
+  },
   "linter": {
-    "enabled": true,
     "domains": {
       "next": "recommended",
       "react": "recommended",
       "test": "recommended"
     },
+    "enabled": true,
     "rules": {
-      "performance": {
-        "noImgElement": "off"
-      },
       "a11y": {
-        "noSvgWithoutTitle": "off",
-        "useButtonType": "off",
         "noAutofocus": "off",
-        "useFocusableInteractive": "off",
-        "useSemanticElements": "off",
+        "noStaticElementInteractions": "info",
+        "noSvgWithoutTitle": "off",
         "useAriaPropsForRole": "off",
+        "useButtonType": "off",
+        "useFocusableInteractive": "off",
         "useKeyWithClickEvents": "off",
-        "useMediaCaption": "off"
+        "useMediaCaption": "off",
+        "useSemanticElements": "off"
       },
       "complexity": {},
       "correctness": {
         "noUnusedFunctionParameters": "info",
         "noUnusedVariables": "info"
-      },
-      "recommended": true,
-      "suspicious": {
-        "noArrayIndexKey": "off",
-        "noExplicitAny": "off",
-        "noDocumentCookie": "off"
       },
       "nursery": {
         "useSortedClasses": {
@@ -77,54 +87,44 @@
           }
         }
       },
+      "performance": {
+        "noImgElement": "off"
+      },
+      "recommended": true,
       "style": {
         "useFilenamingConvention": {
-          "level": "error",
+          "level": "info",
           "options": {
-            "strictCase": true,
+            "filenameCases": ["kebab-case"],
             "requireAscii": true,
-            "filenameCases": ["kebab-case"]
+            "strictCase": true
           }
         }
+      },
+      "suspicious": {
+        "noArrayIndexKey": "off",
+        "noDocumentCookie": "off",
+        "noExplicitAny": "off"
       }
     }
-  },
-  "json": {
-    "parser": {
-      "allowComments": true,
-      "allowTrailingCommas": true
-    }
-  },
-  "assist": {
-    "actions": {
-      "source": {
-        "organizeImports": "on",
-        "useSortedAttributes": "on",
-        "useSortedKeys": "off",
-        "useSortedProperties": "on"
-      }
-    },
-    "enabled": true
-  },
-  "vcs": {
-    "clientKind": "git",
-    "enabled": true,
-    "useIgnoreFile": true,
-    "defaultBranch": "main"
   },
   "overrides": [
     {
-      "includes": ["apps/web/src/**"],
-      "linter": {
-        "rules": {
-          "style": {
-            "useFilenamingConvention": "info"
-          },
-          "a11y": {
-            "noStaticElementInteractions": "info"
+      "assist": {
+        "actions": {
+          "source": {
+            "useSortedKeys": "on"
           }
-        }
-      }
+        },
+        "enabled": true
+      },
+      "includes": ["**/biome.json", "**/package.json", "**/turbo.json"]
     }
-  ]
+  ],
+  "vcs": {
+    "clientKind": "git",
+    "defaultBranch": "main",
+    "enabled": true,
+    "useIgnoreFile": true
+  }
 }

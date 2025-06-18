@@ -1,18 +1,4 @@
 {
-  "name": "@repo/utils",
-  "version": "0.0.0",
-  "private": true,
-  "scripts": {
-    "clean": "git clean -xdf .cache .turbo dist node_modules docs/.vitepress/cache docs/.vitepress/dist docs/reference coverage",
-    "typecheck": "tsc --noEmit --emitDeclarationOnly false",
-    "dev": "pnpm predocs && vitepress dev docs --port 4002",
-    "build": "pnpm predocs && vitepress build docs",
-    "start": "vitepress preview docs --port 4002",
-    "predocs": "typedoc",
-    "test": "vitest",
-    "test:once": "vitest --run",
-    "coverage": "vitest run --coverage"
-  },
   "dependencies": {
     "@zip.js/zip.js": "^2.7.62",
     "clsx": "^2.1.1",
@@ -30,5 +16,19 @@
     "typescript": "^5.8.3",
     "vitepress": "^1.6.3",
     "vitest": "^3.2.4"
-  }
+  },
+  "name": "@repo/utils",
+  "private": true,
+  "scripts": {
+    "build": "pnpm predocs && vitepress build docs",
+    "clean": "git clean -xdf .cache .turbo dist node_modules docs/.vitepress/cache docs/.vitepress/dist docs/reference coverage",
+    "coverage": "vitest run --coverage",
+    "dev": "pnpm predocs && vitepress dev docs --port 4002",
+    "predocs": "typedoc",
+    "start": "vitepress preview docs --port 4002",
+    "test": "vitest",
+    "test:once": "vitest --run",
+    "typecheck": "tsc --noEmit --emitDeclarationOnly false"
+  },
+  "version": "0.0.0"
 }

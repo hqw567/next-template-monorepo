@@ -1,12 +1,18 @@
 {
   "$schema": "https://turborepo.com/schema.json",
   "globalDependencies": ["**/.env.*local"],
-  "ui": "tui",
   "tasks": {
     "build": {
+      "dependsOn": ["typecheck", "test:once", "^build"],
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
-      "outputs": ["dist/**", ".next/**", "!.next/cache/**", "storybook-static/**"],
-      "dependsOn": ["typecheck", "test:once", "^build"]
+      "outputs": ["dist/**", ".next/**", "!.next/cache/**", "storybook-static/**"]
+    },
+    "clean": {
+      "cache": false
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true
     },
     "start": {
       "dependsOn": ["build"],
@@ -17,13 +23,7 @@
     },
     "typecheck": {
       "dependsOn": ["^typecheck"]
-    },
-    "dev": {
-      "cache": false,
-      "persistent": true
-    },
-    "clean": {
-      "cache": false
     }
-  }
+  },
+  "ui": "tui"
 }

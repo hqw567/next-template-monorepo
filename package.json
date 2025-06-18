@@ -1,24 +1,4 @@
 {
-  "private": true,
-  "scripts": {
-    "build": "turbo typecheck build",
-    "start": "turbo build start",
-    "dev": "turbo dev",
-    "commit": "git-cz",
-    "clean": "turbo clean && git clean -xdf node_modules .turbo .next",
-    "format": "biome format --write",
-    "lint": "biome lint --write --diagnostic-level=warn",
-    "check": "biome check --write --diagnostic-level=warn",
-    "check:error": "biome check --write --diagnostic-level=error",
-    "lint:unsafe": "biome lint --write --unsafe --diagnostic-level=warn",
-    "check:unsafe": "biome check --write --unsafe --diagnostic-level=warn",
-    "dev:web": "turbo dev --filter=web",
-    "dev:docs": "turbo dev --filter=docs",
-    "dev:storybook": "turbo dev --filter=storybook",
-    "typecheck": "turbo typecheck",
-    "prepare": "node setup.mjs && husky",
-    "test": "turbo test:once"
-  },
   "devDependencies": {
     "@biomejs/biome": "2.0.0",
     "@commitlint/config-conventional": "^19.8.1",
@@ -30,12 +10,32 @@
     "turbo": "^2.5.4",
     "typescript": "^5.8.3"
   },
-  "lint-staged": {
-    "*": ["biome check --write --no-errors-on-unmatched"]
-  },
   "engines": {
     "node": ">=22"
   },
+  "lint-staged": {
+    "*": ["biome check --write --no-errors-on-unmatched"]
+  },
   "name": "name",
-  "packageManager": "pnpm@10.12.1+sha512.f0dda8580f0ee9481c5c79a1d927b9164f2c478e90992ad268bbb2465a736984391d6333d2c327913578b2804af33474ca554ba29c04a8b13060a717675ae3ac"
+  "packageManager": "pnpm@10.12.1+sha512.f0dda8580f0ee9481c5c79a1d927b9164f2c478e90992ad268bbb2465a736984391d6333d2c327913578b2804af33474ca554ba29c04a8b13060a717675ae3ac",
+  "private": true,
+  "scripts": {
+    "build": "turbo typecheck build",
+    "check": "biome check --write --diagnostic-level=warn",
+    "check:error": "biome check --write --diagnostic-level=error",
+    "check:unsafe": "biome check --write --unsafe --diagnostic-level=warn",
+    "clean": "turbo clean && git clean -xdf node_modules .turbo .next",
+    "commit": "git-cz",
+    "dev": "turbo dev",
+    "dev:docs": "turbo dev --filter=docs",
+    "dev:storybook": "turbo dev --filter=storybook",
+    "dev:web": "turbo dev --filter=web",
+    "format": "biome format --write",
+    "lint": "biome lint --write --diagnostic-level=warn",
+    "lint:unsafe": "biome lint --write --unsafe --diagnostic-level=warn",
+    "prepare": "node setup.mjs && husky",
+    "start": "turbo build start",
+    "test": "turbo test:once",
+    "typecheck": "turbo typecheck"
+  }
 }
