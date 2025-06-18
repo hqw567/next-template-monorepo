@@ -1,8 +1,13 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.0.0-beta.3/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.0.0/schema.json",
   "files": {
     "ignoreUnknown": true,
-    "includes": ["**", "!**/{node_modules,dist,.next,.turbo,storybook-static}/**"]
+    "includes": [
+      "**",
+      "!**/{node_modules,dist,.next,.turbo,storybook-static}/**",
+      "!**/routeTree.gen.ts",
+      "!**/.vitepress/cache/**"
+    ]
   },
   "formatter": {
     "attributePosition": "auto",
@@ -38,6 +43,9 @@
       "test": "recommended"
     },
     "rules": {
+      "performance": {
+        "noImgElement": "off"
+      },
       "a11y": {
         "noSvgWithoutTitle": "off",
         "useButtonType": "off",
@@ -49,10 +57,15 @@
         "useMediaCaption": "off"
       },
       "complexity": {},
+      "correctness": {
+        "noUnusedFunctionParameters": "info",
+        "noUnusedVariables": "info"
+      },
       "recommended": true,
       "suspicious": {
         "noArrayIndexKey": "off",
-        "noExplicitAny": "off"
+        "noExplicitAny": "off",
+        "noDocumentCookie": "off"
       },
       "nursery": {
         "useSortedClasses": {
@@ -95,8 +108,23 @@
   },
   "vcs": {
     "clientKind": "git",
-    "defaultBranch": "main",
     "enabled": true,
-    "useIgnoreFile": true
-  }
+    "useIgnoreFile": true,
+    "defaultBranch": "main"
+  },
+  "overrides": [
+    {
+      "includes": ["apps/web/src/**"],
+      "linter": {
+        "rules": {
+          "style": {
+            "useFilenamingConvention": "info"
+          },
+          "a11y": {
+            "noStaticElementInteractions": "info"
+          }
+        }
+      }
+    }
+  ]
 }
